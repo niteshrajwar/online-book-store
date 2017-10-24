@@ -1,0 +1,310 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+<link rel="stylesheet" type="text/css" href="dropdown.css">
+
+
+
+<style type="text/css">
+        #nav1,#br1{
+            background-color: #00598E;
+           font-color:red;
+}
+        
+        #nav2{ 
+            background-color: aqua;
+           
+        }
+#search{
+    width: 350px;
+}
+/*.dropdown-submenu {
+    position: relative;
+}
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}*/
+#select{
+    width:200px;
+    height: 25px;
+}
+#gallery{
+    width: 700px;
+    margin-left: 250px;
+    margin-top: 30px;
+    height: 400px;
+}
+#flexiselDemo2{
+    height:265px;
+
+}
+#abcd{
+     background-color: #00598E;
+   height: 50px;
+   color:white;
+   text-align: center;
+   line-height: 50px;
+margin-top: 50px;
+}
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+   var xml;
+  $('#login').click(function(){
+       $.get('user.xml', null, function (data, textStatus) {
+           xml=data;
+           var c=1;
+            $(xml).find('details').each(function(){
+                var item = $(this);
+
+
+          if(item.find('username').text()==$('#name').val() && item.find('password').text()==$('#pass').val())
+                {
+                   window.open('cart.html','_self');
+                    alert("login successfull");
+                    c=0;
+
+                }
+                
+           });
+            if(c!=0)
+            {
+              window.open('index1.html','_self');
+                  alert("invalid users");
+            }
+
+        });
+    });
+});
+    
+
+
+
+
+    </script>
+    <div class="nav1" id="nav1">
+        <img src="flipkart.jpg" height="60px" width="160px">
+        <ul id="br1" class="breadcrumb navbar-right">
+            
+            <li><a href="index1.html"> Home</a></li>
+            <li><a href="#myModal"  data-toggle="modal"> Login</a></li>
+            <li><a href="#"> Contact Us</a></li>
+            <li><a href="#"> Wishlist</a></li>
+            <li><a href="#"> Sign Up</a></li>
+            <li><a href="#"> Account</a></li>
+                        
+            </li>
+        </ul>
+
+        <div id="nav2">
+      <!-- <div class="container">
+            <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li>
+    </ul>
+  </div>
+</div> -->
+<form class="navbar-form">
+           <div class="dropdown form-group">
+            <button   class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown">All Categories
+    <span class="caret"></span></button>
+
+
+    <ul class="dropdown-menu">
+         <li class="dropdown-submenu">
+        <a href="#" class="test">Books</a>
+                <ul class="dropdown-menu">
+                          <li class="dropdown-submenu"><a href="#">Fiction</a>
+                             <ul class="dropdown-menu">
+                          <li><a href="#">Fiction book1</a></li>
+                          <li><a href="#">Fiction book2</a></li>
+                        </ul>
+
+
+
+                          </li>
+                          <li><a href="#">Non-Fiction</a></li>
+                        </ul>
+                    </li>
+      <li class="dropdown-submenu">
+        <a href="#">Clothes</a>
+    <ul class="dropdown-menu">
+                          <li><a href="#">Men</a></li>
+                          <li><a href="#">Women</a></li>
+                        </ul>
+                    </li>
+
+      <li class="dropdown-submenu">
+        <a href="#" class="test">Electronics</a>
+                <ul class="dropdown-menu">
+                          <li><a href="#">Aplliances</a></li>
+                          <li><a href="#">Mobiles</a></li>
+                        </ul>
+
+      </li>
+
+
+     
+    </ul> 
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Search
+<!-- //</select> -->
+<select id="select">
+    <option>Adventure</option>
+
+    <option>Fiction</option>
+    <option>Biography</option>
+        <option>Autobiography</option></select> &nbsp;&nbsp;&nbsp;
+         <input type="search" placeholder="search for items" id="search">
+         <button class="btn btn-info btn-md"><span class="glyphicon glyphicon-search"></span></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="btn btn-info"><i class="glyphicon glyphicon-shopping-cart">Cart</i></button>
+
+                </div>
+    </div>
+</form>
+
+</head>
+<body>
+    
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+   
+
+           <div class="modal-content">
+
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3>Login</h3>
+        </div>
+        <div class="modal-body">
+               <div class="col-md-6">
+            <label>Username</label>
+            <input type="text" name="" id="name"><br><br>
+            <label>Password</label>
+            <input type="password" name="" id="pass"><br><br>
+            <button class="btn btn-info" id="login">Login</button>
+            <a href="#">Forgot your password</a>
+          
+        </div>
+        <div class="col-md-6">
+    <h3>New user?</h3>
+<p>Sign up for flipkart account;track your orders,view your orders history,create your own wishlist,get personlized recommendation and more!</p>
+<button class="btn btn-success btn-lg">Sign up</button>
+  </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  
+  
+</div>
+</div>
+
+
+
+
+
+
+
+<div>
+
+<body>
+<div id="gallery">
+
+<ul id="flexiselDemo2"> 
+    <li><a href=""><img src="images/book9.png" width="175px" height="250px" /></a></li>   
+    <li><a href=""><img src="images/book8.png" width="175px" height="250px" /></a></li> 
+    <li><a href=""><img src="images/book3.png" width="175px" height="250px" /></a></li> 
+    <li><a href=""><img src="images/book6.png" width="175px" height="250px" /></a></li> 
+    <li><a href=""><img src="images/book5.png" width="175px" height="250px" /></a></li>                                                                          
+</ul>
+   </div>    
+
+<script type="text/javascript">
+
+$(window).load(function() {
+
+    $("#flexiselDemo2").flexisel({
+        visibleItems: 4,
+        itemsToScroll: 1,
+        animationSpeed: 200,
+        infinite: true,
+        navigationTargetSelector: null,
+        autoPlay: {
+            enable: true,
+            interval: 1500,
+            pauseOnHover: true
+        },
+        responsiveBreakpoints: { 
+            portrait: { 
+                changePoint:480,
+                visibleItems: 1,
+                itemsToScroll: 1
+            }, 
+            landscape: { 
+                changePoint:640,
+                visibleItems: 2,
+                itemsToScroll: 2
+            },
+            tablet: { 
+                changePoint:768,
+                visibleItems: 3,
+                itemsToScroll: 3
+            }
+        },
+       /* loaded: function(object) {
+            console.log('Slider loaded...');
+        },
+        before: function(object){
+            console.log('Before transition...');
+        },
+        after: function(object) {
+            console.log('After transition...');
+        },
+        resize: function(object){
+            console.log('After resize...');
+        }*/
+    });
+});
+</script>
+
+    <!-- <script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on({
+
+    mouseenter: function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+    },
+
+     mouseleave: function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    /*e.preventDefault();*/
+    }
+  });
+});
+</script> -->
+    
+</body>
+ <footer>
+  <p id="abcd">@Copyrights Reserved</p>
+</footer>
+</html>

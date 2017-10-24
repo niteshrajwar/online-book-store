@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js">
+    
+</script>
+<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+    <title></title>
+</head>
+<script type="text/javascript">
+    
+$(document).ready(function() {
+    var account = [];
+
+    $.ajax ({
+        url: 'data.xml',
+        dataType: 'xml',
+        type: 'get',
+        cache: 'false',
+
+        success: function ( xml ) {
+            // :: Pushing Registered People in Account Array
+            $(xml).find('record').each(function(){
+            account.push({
+                    username: $(this).find('username').text(),
+                    master: $(this).find('master').text()
+                });
+            });
+
+            // :: When Submit Button is Clicked
+            $('#submitReg').click(function(){
+                var found = false;
+                for ( i=0; i<account.length && !found; ++i ) {
+                    if ( account[i]['username'] == $('#usr').val() ) found = true;
+                }
+
+                // :: If Username Already Exists
+                /*if ( found ) {
+                    $('#errorStatus').html('Username Already Exists');
+                    $('#usr').val('');
+                    $('#pwd').val('');
+                }*/
+                else {
+                    // :: Write to file
+                }
+            });
+        }
+    });
+    console.log($('#usr').val());
+});
+
+
+            
+
+</script>
+<body>
+    name:<input type="text" name="usr" id="usr"><br>
+    details:<input type="text" name="details" id="pwd"><br>
+
+    <button id="submitReg">add</button>
+
+</body>
+</html>

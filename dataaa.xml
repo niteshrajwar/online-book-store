@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<user>
+
+<details>
+<product>The Secret</product>
+<quantity>1</quantity>
+<price>500</price>
+
+</details>
+<details>
+<product>Life is What You Make It </product>
+<quantity>1</quantity>
+<price>200</price>
+
+</details>
+<details>
+<product>Wings of fire</product>
+<quantity>1</quantity>
+<price>100</price>
+
+</details>
+<details>
+<product>Half Girlfriend</product>
+<quantity>1</quantity>
+<price>500</price>
+
+</details>
+<details>
+<product>The Secret of Nagas</product>
+<quantity>1</quantity>
+<price>300</price>
+
+</details>
+
+
+
+
+
+
+</user>

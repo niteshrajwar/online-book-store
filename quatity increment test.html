@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+.droptarget {
+    float: left; 
+    width: 100px; 
+    height: 250px;
+    margin: 15px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+</style>
+</head>
+<body>
+
+<p>Drag the p element back and forth between the two rectangles:</p>
+
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img ondragstart="dragStart(event)" draggable="true" id="image" src="images.jpg" height="25" width="30">
+  <p ondragstart="dragStart(event)" draggable="true" id="prasanna1">prasanna
+     
+    </p>
+    <p ondragstart="dragStart(event)" draggable="true" id="chandrika">chandrika
+        
+       </p>
+       
+    
+</div>
+</div>
+<div id="tar" class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<p style="clear:both;"><strong>Note:</strong> drag events are not supported in Internet Explorer 8 and earlier versions or Safari 5.1 and earlier versions.</p>
+
+<p id="demo"></p>
+
+<script>
+    var a=[]; 
+    i=0; 
+
+function dragStart(event) {
+    event.dataTransfer.setData("text", event.target.id);
+    document.getElementById("demo").innerHTML = "Started to drag the p element";
+}
+
+function allowDrop(event) {
+    event.preventDefault();
+}
+
+function drop(event) {
+  
+   
+   var b=[];
+   var  c=0;
+    event.preventDefault();
+    b.push( event.dataTransfer.getData("text"));
+    
+   // event.target.appendChild(document.getElementById(data));
+   //console.log(a.length);
+  
+    // if(i==0){
+   document.getElementById("row").innerHTML += "<tr>"+"<td>"+b+"</td>"+"</tr>";
+    
+  //  }
+   
+   /* else if(i>=1){
+    for(var k=0;k<=a.length;k++){
+    if(b==a[k]) { 
+      c+=1;
+       
+  }
+    }
+    }
+    
+    if(c>0){
+        document.getElementById("row").innerHTML += "<tr>"+"<td>"+b+"</td>"+"</tr>";
+ 
+    }
+    
+    a[i]=b;
+    console.log(c);
+// console.log(b);
+    console.log(a);
+    i+=1;*/
+     
+}
+</script>
+<table border="1">
+    <tr>
+    <th>Name</th>
+    <th>price</th>
+</tr>
+<tbody id="row">
+    </tbody>
+</table>
+</body>
+</html>
+
+ 

@@ -1,0 +1,23 @@
+<html>
+<head>
+   <script language="javascript" type="text/javascript" src="test.js"></script>
+
+   <script type="text/javascript">
+   	
+   	function test(){
+   		var a=document.getElementById("name").value;
+   		alert (a);
+   	}
+   </script>
+</head>
+
+<body>
+
+<form name="form1" action="second.html" method="get">
+name:<input type ="text" id="name" name="n">
+<button type="submit" value="next" onclick="testJS()" >
+<button type="button" id="print" onClick="test()"> Print </button>
+</form>
+
+</body>
+</html>

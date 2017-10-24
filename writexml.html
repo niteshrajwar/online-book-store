@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <link href="css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js">
+    
+</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		//var xmlDocument = [create xml document];
+$.ajax({
+        url: "page.xml",
+        processData: false,
+        // data: xmlDocument,
+        // dataType: 'xml',
+       
+  success:function(){
+
+     var t = $('<foo><bar>something</bar></foo>');
+
+//loop over 'bar' nodes
+t.find('bar').each(function () {
+    alert($(this).text());
+});
+}
+});
+  });
+	</script>
+	<title></title>
+</head>
+<body>
+<p>hello</p>
+</body>
+</html>

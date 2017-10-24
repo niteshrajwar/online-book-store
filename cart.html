@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+<script type="text/javascript">
+var i=0;
+var p=100;
+var q=1;
+var o=0;
+	function dragStart(event) {
+    event.dataTransfer.setData("text", event.target.id);
+}
+	
+function allowDrop(event) {
+    event.preventDefault();
+}
+function drop(event) {
+	
+	/*var a=document.getElementById("abc").text();
+          alert(a);*/
+	var values = new Array(3);
+ /* values[0] = ["Harry porter",q,p];
+  values[1] =["angular js 2",q,p];
+   values[2] =["javascript",q,p];*/
+    var a=[];
+	//var mixed = document.getElementById("mixed");
+	//var tbody = document.createElement("tbody");
+    event.preventDefault();
+ a.push(event.dataTransfer.getData("text"));
+        
+
+ values[0] = [a,q,156];
+  values[1] =[a,q,289];
+   values[2] =[a,q,489];
+     values[3] =[a,q,654];
+       values[4] =[a,q,478];
+   
+   
+
+    
+console.log(a);
+  
+
+
+
+  
+  
+     
+          
+     
+    
+           
+         document.getElementById("tabrow").innerHTML+="<tr><td>"+values[i][0]+
+         "</td><td>"+values[i][1]+"</td><td>"+values[i][2]+"</td><tr>";
+      
+       
+            
+    
+
+o = o + values[i][2];
+document.getElementById("abc").innerHTML = o;
+i+=1;
+}
+
+
+
+</script>
+<style type="text/css">
+	#gallery{
+		width: 650px;
+		margin-left: 40px;
+		/*border-style: solid;*/
+		position:static;
+		height: 500px
+	}
+#carttable{
+	margin-left: 710px;
+	width: 250px;
+	/*border: solid grey 1pt;*/
+  background-color: #ccccb3;
+	height: 450px;
+	margin-top: -520px;
+	position: static;
+}
+#mixed{
+  background-color: white;
+ margin-left: 10px;
+
+}
+
+
+</style>
+<style type="text/css">
+        #nav1,#br1{
+            background-color: #00598E;
+           font-color:white;
+
+}
+       
+#abcd{
+     background-color: #00598E;
+   height: 50px;
+   color:white;
+   text-align: center;
+   line-height: 50px;
+
+}
+
+    </style>
+</head>
+<body>
+ <div class="nav1" id="nav1">
+        <img src="flipkart.jpg" height="60px" width="160px">
+        <ul id="br1" class="breadcrumb navbar-right" >
+            
+            <li><a href="#"> Home</a></li>
+            <li><a href="#myModal"  data-toggle="modal"> Login</a></li>
+            <li><a href="#"> Contact Us</a></li>
+            <li><a href="#"> Wishlist</a></li>
+            <li><a href="#"> Sign Up</a></li>
+            <li><a href="#"> Account</a></li>
+                        
+            </li>
+        </ul>
+    </div>
+    <div>
+ 
+  <h1>Welcome to your cart!!</h1>
+
+<h4>Add your items by dragging them to cart</h4>
+
+	<!-- <div id="cartlist"  ondragover="allowDrop(event)">
+    <ul class="list-inline">
+	<li id="abc"  ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" >harry porter<a href="#"><img src="images/books1.jpg"></a></li>
+	<li ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true">
+		<a href="#"><img src="images/book2.png"></a></li>
+
+      <li ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"><a href="#"><img src="images/book2.png"></a></li>
+
+       <li ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"><a href="#"><img src="images/book3.png"></a></li>
+
+
+
+
+</ul>
+
+</div> -->
+<div id="gallery">
+
+<ul id="flexiselDemo2"> 
+    <li><a href=""><img ondragstart="dragStart(event)" draggable="true"
+     id="Life is What You Make It" src="images/book9.png" width="175px" height="250px" /></a></li> 
+
+
+    <li><a href=""><img ondragstart="dragStart(event)" draggable="true" id="The Secret" src="images/book8.png" width="175px" height="250px" /></a></li> 
+
+    <li><a href=""><img ondragstart="dragStart(event)" draggable="true" id="The Secret of Nagas" src="images/book3.png" width="175px" height="250px" /></a></li> 
+
+    <li><a href=""><img ondragstart="dragStart(event)" draggable="true" id="Wings of Fire" src="images/book6.png" width="175px" height="250px" /></a></li> 
+
+    <li><a href=""><img ondragstart="dragStart(event)" draggable="true" id="Half Girlfriend" src="images/book5.png" width="175px" height="250px" /></a></li>                                                                          
+</ul>
+   </div>    
+
+<script type="text/javascript">
+
+$(window).load(function() {
+
+    $("#flexiselDemo2").flexisel({
+        visibleItems: 3,
+        itemsToScroll: 1,
+        animationSpeed: 200,
+        infinite: true,
+        navigationTargetSelector: null,
+        autoPlay: {
+            enable: false,
+            interval: 1500,
+            pauseOnHover: true
+        },
+        responsiveBreakpoints: { 
+            portrait: { 
+                changePoint:480,
+                visibleItems: 1,
+                itemsToScroll: 1
+            }, 
+            landscape: { 
+                changePoint:640,
+                visibleItems: 2,
+                itemsToScroll: 2
+            },
+            tablet: { 
+                changePoint:768,
+                visibleItems: 3,
+                itemsToScroll: 3
+            }
+        },
+       /* loaded: function(object) {
+            console.log('Slider loaded...');
+        },
+        before: function(object){
+            console.log('Before transition...');
+        },
+        after: function(object) {
+            console.log('After transition...');
+        },
+        resize: function(object){
+            console.log('After resize...');
+        }*/
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+<div id="carttable" class="droptarget " ondrop="drop(event)"
+ondragover="allowDrop(event)">
+	<h3 align="center">Shopping Cart</h3>
+<div id="tar" class="droptarget"  ondragover="allowDrop(event)">
+ 
+	<table id="mixed" border="1" >
+		<tr style="background-color: #f5f5ef">
+		<th>Name</th>
+		<th>Quantity</th>
+		<th>Price</th>
+        </tr>
+      <tbody id="tabrow"></tbody>
+        
+        
+	</table>
+
+</div>
+<div>
+
+
+ <p style="margin-left: 150px">Total: <span id="abc"></span></p>
+
+<a href="cartcart.html" target="_self"><button class="btn btn-success" style="margin-left: 5px; margin-top:5px">Pay Now</button></a>
+
+</div>
+</div>
+</div>
+
+</body>
+ <footer>
+  <p id="abcd">@Copyrights Reserved</p>
+</footer>
+
+
+</html>
