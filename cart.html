@@ -83,7 +83,7 @@ i+=1;
 	width: 250px;
 	/*border: solid grey 1pt;*/
   background-color: #ccccb3;
-	height: 450px;
+	height: 420px;
 	margin-top: -520px;
 	position: static;
 }
@@ -96,9 +96,11 @@ i+=1;
 
 </style>
 <style type="text/css">
-        #nav1,#br1{
+        #nav1{
             background-color: #00598E;
            font-color:white;
+           width: 1000px;
+           margin-left: 7px;
 
 }
        
@@ -108,9 +110,23 @@ i+=1;
    color:white;
    text-align: center;
    line-height: 50px;
+   
+   
 
 }
 
+.a{
+  color:white;
+}
+.breadcrumb {
+  background-color:  #00598E;
+  margin-right: 10px
+}
+
+.a:hover{
+  color:skyblue;
+
+}
     </style>
 </head>
 <body>
@@ -118,14 +134,15 @@ i+=1;
         <img src="flipkart.jpg" height="60px" width="160px">
         <ul id="br1" class="breadcrumb navbar-right" >
             
-            <li><a href="#"> Home</a></li>
-            <li><a href="#myModal"  data-toggle="modal"> Login</a></li>
-            <li><a href="#"> Contact Us</a></li>
-            <li><a href="#"> Wishlist</a></li>
-            <li><a href="#"> Sign Up</a></li>
-            <li><a href="#"> Account</a></li>
+           <li><a href="index1.html" class="a"> Home</a></li>
+            <li><a href="#myModal"  data-toggle="modal" class="a"> Login</a></li>
+            <li><a href="#" class="a"> Contact Us</a></li>
+            <li><a href="#" class="a"> Wishlist</a></li>
+            <li><a href="#" class="a"> Sign Up</a></li>
+            <li><a href="#" class="a"> Account</a></li>
                         
-            </li>
+                        
+            
         </ul>
     </div>
     <div>
